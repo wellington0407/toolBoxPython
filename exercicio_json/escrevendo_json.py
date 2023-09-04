@@ -1,6 +1,9 @@
+from formar_json import escrever_json, save_data
 from Pessoas import *
 
 if __name__ == '__main__':
+
+    lista_pessoas = []
 
     ana = Pessoas('Ana', 'Maria', 26, 'F')
     print(ana)
@@ -11,6 +14,9 @@ if __name__ == '__main__':
     bia = Pessoas('Bia', 'Silva', 22, 'F')
     print(bia)
 
-    bia.escrever_json('w')
-    pedro.escrever_json('a')
-    ana.escrever_json('a')
+    lista_pessoas.append(save_data(ana))
+    lista_pessoas.append(save_data(pedro))
+    lista_pessoas.append(save_data(bia))
+
+    escrever_json(lista_pessoas, 'w')
+
